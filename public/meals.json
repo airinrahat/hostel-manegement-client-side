@@ -1,0 +1,260 @@
+[
+  {
+    "id": "b1",
+    "category": "breakfast",
+    "price": "25",
+    "title": "Caprese Sandwich with Pesto",
+    "image": "https://i.ibb.co/0tZxvKb/slider1.jpg",
+    "admin_or_distributor_name": "MorningEats",
+    "meal_description": "Avocado Toast with Poached Egg",
+    "ingredients": ["Avocado", "Whole-grain bread", "Egg", "Salt", "Pepper"],
+    "post_time": "2023-11-24T08:00:00",
+    "rating": 4.8,
+    "like_button": { "count": 20, "users": ["user1", "user2", "user3"] },
+    "meal_request_button": { "count": 7, "users": ["user4", "user5"] },
+    "reviews": [
+      { "user": "user6", "comment": "Perfect breakfast, quick and tasty!" },
+      { "user": "user7", "comment": "Love the combination of flavors." }
+    ]
+  },
+
+  {
+    "id": "l2",
+    "category": "lunch",
+    "image": "https://i.ibb.co/9hKDsHV/slider2.jpg",
+    "title": "Mediterranean Chickpea Salad",
+    "price": "31",
+    "admin_or_distributor_name": "LunchDelights",
+    "meal_description": "Chicken Caesar Salad",
+    "ingredients": [
+      "Grilled chicken breast",
+      "Romaine lettuce",
+      "Parmesan cheese",
+      "Croutons",
+      "Caesar dressing"
+    ],
+    "post_time": "2023-11-24T12:30:00",
+    "rating": 4.5,
+    "like_button": { "count": 15, "users": ["user8", "user9", "user10"] },
+    "meal_request_button": { "count": 5, "users": ["user11", "user12"] },
+    "reviews": [
+      { "user": "user13", "comment": "Healthy and satisfying lunch option." },
+      {
+        "user": "user14",
+        "comment": "Great balance of flavors. Will make again!"
+      }
+    ]
+  },
+
+  {
+    "id": "d3",
+    "title": "Grilled Chicken with Rosemary Potatoes",
+    "price": "25",
+    "category": "dinner",
+
+    "image": "https://i.ibb.co/9hKDsHV/slider2.jpg",
+    "admin_or_distributor_name": "EveningFeast",
+    "meal_description": "Grilled Salmon with Lemon Dill Sauce",
+    "ingredients": [
+      "Salmon fillet",
+      "Lemon",
+      "Dill",
+      "Olive oil",
+      "Garlic",
+      "Salt",
+      "Pepper"
+    ],
+    "post_time": "2023-11-24T18:00:00",
+    "rating": 4.7,
+    "like_button": { "count": 18, "users": ["user15", "user16", "user17"] },
+    "meal_request_button": { "count": 6, "users": ["user18", "user19"] },
+    "reviews": [
+      {
+        "user": "user20",
+        "comment": "Delicious and perfectly cooked salmon!"
+      },
+      {
+        "user": "user21",
+        "comment": "The lemon dill sauce adds a nice touch."
+      }
+    ]
+  },
+  {
+    "id": "b4",
+    "category": "breakfast",
+    "price": "25",
+    "title": "Caprese Sandwich with Pesto",
+
+    "image": "https://i.ibb.co/0tZxvKb/slider1.jpg",
+    "admin_or_distributor_name": "MorningFuel",
+    "meal_description": "Vegetarian Omelette with Spinach and Feta",
+    "ingredients": ["Eggs", "Spinach", "Feta cheese", "Tomatoes", "Onions"],
+    "post_time": "2023-11-24T09:30:00",
+    "rating": 4.6,
+    "like_button": { "count": 22, "users": ["user22", "user23", "user24"] },
+    "meal_request_button": { "count": 9, "users": ["user25", "user26"] },
+    "reviews": [
+      { "user": "user27", "comment": "A hearty and satisfying breakfast!" },
+      {
+        "user": "user28",
+        "comment": "Great flavor combination in the omelette."
+      }
+    ]
+  },
+  {
+    "id": "b5",
+    "category": "breakfast",
+    "price": "25",
+    "title": "Caprese Sandwich with Pesto",
+    "image": "https://i.ibb.co/0tZxvKb/slider1.jpg",
+    "admin_or_distributor_name": "RiseAndShine",
+    "meal_description": "Smoothie Bowl with Mixed Berries and Almond Butter",
+    "ingredients": [
+      "Mixed berries",
+      "Banana",
+      "Almond butter",
+      "Granola",
+      "Chia seeds"
+    ],
+    "post_time": "2023-11-24T10:00:00",
+    "rating": 4.4,
+    "like_button": { "count": 17, "users": ["user29", "user30", "user31"] },
+    "meal_request_button": { "count": 3, "users": ["user32", "user33"] },
+    "reviews": [
+      {
+        "user": "user34",
+        "comment": "Refreshing and nutritious breakfast choice."
+      },
+      {
+        "user": "user35",
+        "comment": "Loved the combination of flavors and textures."
+      }
+    ]
+  },
+  {
+    "id": "l6",
+    "category": "lunch",
+    "title": "Caprese Sandwich with Pesto",
+    "price": "31",
+    "image": "https://i.ibb.co/9hKDsHV/slider2.jpg",
+    "admin_or_distributor_name": "NoonNosh",
+    "meal_description": "Mediterranean Chickpea Salad",
+    "ingredients": [
+      "Chickpeas",
+      "Cucumbers",
+      "Cherry tomatoes",
+      "Feta cheese",
+      "Red onion",
+      "Olives",
+      "Olive oil",
+      "Lemon",
+      "Oregano"
+    ],
+    "post_time": "2023-11-24T13:00:00",
+    "rating": 4.4,
+    "like_button": { "count": 16, "users": ["user36", "user37", "user38"] },
+    "meal_request_button": { "count": 8, "users": ["user39", "user40"] },
+    "reviews": [
+      {
+        "user": "user41",
+        "comment": "A refreshing and filling salad for lunch."
+      },
+      {
+        "user": "user42",
+        "comment": "Love the Mediterranean flavors in this dish."
+      }
+    ]
+  },
+  {
+    "id": "7l",
+    "category": "lunch",
+    "title": "Caprese Sandwich with Pesto",
+    "price": "51",
+    "image": "https://i.ibb.co/9hKDsHV/slider2.jpg",
+    "admin_or_distributor_name": "LunchLuxe",
+    "meal_description": "Caprese Sandwich with Pesto",
+    "ingredients": [
+      "Ciabatta bread",
+      "Tomatoes",
+      "Fresh mozzarella",
+      "Basil leaves",
+      "Pesto sauce",
+      "Balsamic glaze"
+    ],
+    "post_time": "2023-11-24T13:30:00",
+    "rating": 4.6,
+    "like_button": { "count": 19, "users": ["user43", "user44", "user45"] },
+    "meal_request_button": { "count": 6, "users": ["user46", "user47"] },
+    "reviews": [
+      {
+        "user": "user48",
+        "comment": "Delicious sandwich with a burst of flavors."
+      },
+      { "user": "user49", "comment": "Perfect for a light and tasty lunch." }
+    ]
+  },
+  {
+    "id": "d11",
+    "title": "Grilled Chicken with Rosemary Potatoes",
+    "price": "25",
+    "category": "dinner",
+
+    "image": "https://i.ibb.co/9hKDsHV/slider2.jpg",
+    "admin_or_distributor_name": "NightNosh",
+    "meal_description": "Grilled Chicken with Rosemary Potatoes",
+    "ingredients": [
+      "Chicken breasts",
+      "Potatoes",
+      "Rosemary",
+      "Olive oil",
+      "Garlic",
+      "Salt",
+      "Pepper"
+    ],
+    "post_time": "2023-11-24T18:30:00",
+    "rating": 4.5,
+    "like_button": { "count": 22, "users": ["user50", "user51", "user52"] },
+    "meal_request_button": { "count": 9, "users": ["user53", "user54"] },
+    "reviews": [
+      { "user": "user55", "comment": "Simple and delicious dinner recipe." },
+      {
+        "user": "user56",
+        "comment": "The rosemary potatoes are a perfect side!"
+      }
+    ]
+  },
+  {
+    "id": "d12",
+    "title": "Grilled Chicken with Rosemary Potatoes",
+    "price": "75",
+    "category": "dinner",
+
+    "image": "https://i.ibb.co/9hKDsHV/slider2.jpg",
+    "admin_or_distributor_name": "DinnerDelish",
+    "meal_description": "Vegetarian Stir-Fry with Tofu and Veggies",
+    "ingredients": [
+      "Tofu",
+      "Broccoli",
+      "Bell peppers",
+      "Carrots",
+      "Soy sauce",
+      "Ginger",
+      "Garlic",
+      "Sesame oil"
+    ],
+    "post_time": "2023-11-24T19:00:00",
+    "rating": 4.3,
+    "like_button": { "count": 18, "users": ["user57", "user58", "user59"] },
+    "meal_request_button": { "count": 7, "users": ["user60", "user61"] },
+    "reviews": [
+      {
+        "user": "user62",
+        "comment": "A tasty and healthy vegetarian dinner option."
+      },
+      {
+        "user": "user63",
+        "comment": "The tofu adds a nice protein element to the stir-fry."
+      }
+    ]
+  }
+]

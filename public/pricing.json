@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Basic Package",
+    "price": 29.99,
+    "userLimit": 10,
+    "advancedFeatures": false,
+    "available": true,
+    "level": "Basic",
+    "contact": "basic-support@example.com"
+  },
+  {
+    "name": "Standard Package",
+    "price": 49.99,
+    "userLimit": 25,
+    "advancedFeatures": false,
+    "available": true,
+    "level": "Standard",
+    "contact": "standard-support@example.com"
+  },
+  {
+    "name": "Premium Package",
+    "price": 99.99,
+    "userLimit": 50,
+    "advancedFeatures": true,
+    "available": true,
+    "level": "Premium",
+    "contact": "premium-support@example.com"
+  }
+]
