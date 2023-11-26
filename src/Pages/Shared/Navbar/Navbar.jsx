@@ -103,7 +103,10 @@ const Navbar = () => {
                 <li>
                   <a>
                     {" "}
-                    <button onClick={handleLogOut} className="btn btn-success">
+                    <button
+                      onClick={handleLogOut}
+                      className="btn text-white btn-sm bg-[#ef8829]"
+                    >
                       logout
                     </button>{" "}
                   </a>

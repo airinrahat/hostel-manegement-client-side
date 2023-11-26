@@ -1,12 +1,20 @@
 /* eslint-disable no-unused-vars */
+
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import img from "../../assets/google.svg";
+import { useForm } from "react-hook-form";
 
 const SingUp2 = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const { createUser, signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -104,6 +112,7 @@ const SingUp2 = () => {
 
   return (
     <div>
+      {/* onSubmit={handleSingup} */}
       <form onSubmit={handleSingup}>
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
           <div className="relative flex flex-col  space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row ">
@@ -151,8 +160,8 @@ const SingUp2 = () => {
                 <span className="mb-2 text-md font-bold">Name</span>
                 <input
                   type="text"
-                  // className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                   className="w-full   p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
+                  {...register("name", { required: true })}
                   required
                   placeholder="Enter Your Name"
                   name="name"
@@ -165,6 +174,7 @@ const SingUp2 = () => {
                   type="email"
                   required
                   placeholder="Enter Your Email"
+                  {...register("email", { required: true })}
                   name="email"
                 />
               </div>
@@ -175,6 +185,7 @@ const SingUp2 = () => {
                   className="w-full   p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
                   required
                   placeholder="Enter Your Photo URL"
+                  {...register("photo", { required: true })}
                   name="photo"
                 />
               </div>
@@ -187,6 +198,7 @@ const SingUp2 = () => {
                   placeholder="Enter Your Password"
                   name="password"
                   className="w-full   p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
+                  {...register("password", { required: true })}
                 />
               </div>
               <div className="pws-btn">

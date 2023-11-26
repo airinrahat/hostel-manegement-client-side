@@ -40,14 +40,14 @@ export const router = createBrowserRouter([
       {
         path: "/singlemeals/:id",
         element: <SingleMealsDetails></SingleMealsDetails>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/meals/${params.id}`),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/meals/${params.id}`),
       },
       {
-        path: "/checkout/:id",
+        path: "/checkout",
         element: <CheckoutForm></CheckoutForm>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/pricing/${params.id}`),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/pricing/${params.id}`),
       },
       {
         path: "/allmeals",

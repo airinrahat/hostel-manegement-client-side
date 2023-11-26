@@ -2,7 +2,7 @@
 import React from "react";
 // import "./MemberShipCard.css";
 import { FaCheck } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const MemberShipCard = () => {
   return (
@@ -11,9 +11,10 @@ const MemberShipCard = () => {
         <h3 className="text-3xl font-bold uppercase  py-4">Our Pricing</h3>
       </div>
 
-      <Link to="{`/checkout/${_id}`}">
-        <div className="bg-gray-100 py-10 mb-12  flex items-center justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-gray-100 py-10 mb-12  flex items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link to="/checkout">
+            {/* <Link to={`/checkout/${_id}`}> */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
               <div className="p-1 bg-blue-200"></div>
               <div className="p-8">
@@ -45,6 +46,8 @@ const MemberShipCard = () => {
                 </button>
               </div>
             </div>
+          </Link>
+          <Link to="/checkout">
             <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
               <div className="p-1 bg-green-200"></div>
               <div className="p-8">
@@ -76,7 +79,8 @@ const MemberShipCard = () => {
                 </button>
               </div>
             </div>
-
+          </Link>
+          <Link to="/checkout">
             <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
               <div className="p-1 bg-purple-200"></div>
               <div className="p-8">
@@ -108,9 +112,9 @@ const MemberShipCard = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

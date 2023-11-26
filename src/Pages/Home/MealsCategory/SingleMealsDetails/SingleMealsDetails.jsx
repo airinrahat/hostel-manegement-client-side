@@ -1,31 +1,41 @@
 /* eslint-disable no-unused-vars */
 import { Rating } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiFillLike } from "react-icons/ai";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+import { AuthContext } from "../../../../Provider/AuthProvider";
 
 const SingleMealsDetails = () => {
-  const singlemeals = useLoaderData();
-  const { category } = singlemeals;
+  const [singleMeal, setSingleMeal] = useState({});
+  const { user } = useContext(AuthContext);
+  const { id } = useParams();
+  const url = `http://localhost:5000/meals/${id}`;
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setSingleMeal(data));
+  }, [url]);
 
+  console.log(singleMeal);
   const [count, setCount] = useState(1000);
   return (
     <div className="mx-auto max-w-screen-xl flex justify-center my-5">
       <div className="card w-96 bg-base-100 shadow-xl ">
         <figure>
-          <img src="https://i.ibb.co/0tZxvKb/slider1.jpg" alt="Shoes" />
+          <img src={singleMeal?.image} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Admin Name: {category}</h2>
+          <h2 className="card-title">Admin Name:{user.displayName}</h2>
+          <h2 className="card-title">Category: {singleMeal?.category}</h2>
           <p>
             {" "}
-            <span className="font-bold"> Meal Description</span>: If a dog chews
-            shoes whose shoes does he choose?
+            <span className="font-bold"> Meal Description</span>:{" "}
+            {singleMeal?.meal_description}
           </p>
           <p>
             {" "}
-            <span className="font-bold"> Ingredients</span> : Mixed berries,
-            Banana, Almond butter, Granola, Chia seeds
+            <span className="font-bold"> Ingredients</span> :
+            {singleMeal?.ingredients}
           </p>
           <p>
             {" "}
