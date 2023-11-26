@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import img from "../../assets/google.svg";
 
 const Login2 = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
@@ -66,7 +67,7 @@ const Login2 = () => {
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
           <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
             {/* <!-- left side --> */}
-            <div className="relative">
+            {/* <div className="relative">
               <img
                 src="https://i.ibb.co/fXSFwTP/login2.png"
                 alt="img"
@@ -81,22 +82,30 @@ const Login2 = () => {
                   imagine working without it
                 </span>
               </div>
-            </div>
+            </div> */}
             {/* right side  */}
 
             <div className="flex flex-col justify-center p-8 md:p-14">
               <p className="text-red-600 text-center">{error}</p>
               <p className="text-green-600">{success}</p>
-              <span className="mb-3 text-4xl text-center font-bold">
+              <span className="mb-3 text-4xl text-center text-[#ef8829] font-bold">
                 Please Login
               </span>
-              <span className="font-light text-center text-gray-400 mb-8">
+              <span className="font-light text-center text-black mb-8">
                 Hey! Enter your details to get login to your account
               </span>
-              <div className="py-4">
-                <span className="mb-2 text-md">Email</span>
+              <button
+                onClick={handleGoogleLogin}
+                className="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-[#ef8829] hover:text-white"
+              >
+                <img src={img} alt="img" className="w-6 h-6 inline mr-2" />
+                Sign in with Google
+              </button>
+
+              <div className="py-2">
+                <span className=" font-bold text-md">Email</span>
                 <input
-                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full  mt-2 p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
                   type="email"
                   required
                   placeholder="Enter Your Email"
@@ -104,14 +113,14 @@ const Login2 = () => {
                 />
               </div>
 
-              <div className="py-4">
-                <span className="mb-2 text-md">Password</span>
+              <div className="py-2">
+                <span className="mb-2 font-bold text-md">Password</span>
                 <input
                   type={show ? "text" : "password"}
                   required
                   placeholder="Enter Your Password"
                   name="password"
-                  className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full mt-2 p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
                 />
               </div>
               <div className="pws-btn">
@@ -133,24 +142,14 @@ const Login2 = () => {
                 </div>
                 <span className="font-bold text-md">Forgot password</span>
               </div>
-              <button className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
+              <button className="w-full bg-[#ef8829] text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
                 Sign in
               </button>
-              <button
-                onClick={handleGoogleLogin}
-                className="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
-              >
-                <img
-                  src="/src/assets/google.svg"
-                  alt="img"
-                  className="w-6 h-6 inline mr-2"
-                />
-                Sign in with Google
-              </button>
+
               <div className="text-center text-gray-400">
                 Do not have an account?
                 <Link className="text-blue-600 font-bold ml-1" to="/singup">
-                  <u>Sign up for free</u>
+                  <u>Register Now</u>
                 </Link>
                 {/* <span className="font-bold text-black">Sign up for free</span> */}
               </div>
