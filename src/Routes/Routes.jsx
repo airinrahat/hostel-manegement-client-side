@@ -83,6 +83,7 @@ export const router = createBrowserRouter([
       {
         path: "mealsAll",
         element: <MealsAll></MealsAll>,
+        loader: () => fetch("http://localhost:5000/meals"),
       },
 
       {
