@@ -15,7 +15,7 @@ const MealsCard = ({ item }) => {
         </figure>
 
         <div className="card-body text-start">
-          <h2 className="card-title font-bold">{title}</h2>
+          <h2 className="card-title font-bold">Title: {title}</h2>
           <h3 className="text-xl">
             <b>Category : </b>
             {category}

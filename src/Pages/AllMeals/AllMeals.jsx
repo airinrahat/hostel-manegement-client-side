@@ -51,9 +51,9 @@ const AllMeals = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-10">
       <h2 className="text-center text-3xl font-bold my-5">
-        Total Menu Items On This Marketplace : {allmeals.length}
+        Total Menu Items On This Hostel : {allmeals.length}
       </h2>
-      <div className="text-center pb-3 my-4">
+      <div className="text-center pb-1 my-4">
         <input
           type="text"
           placeholder="Search on meals title"
@@ -64,12 +64,12 @@ const AllMeals = () => {
       </div>
 
       <div className="flex justify-center items-center gap-5">
-        <div className="text-center mb-5 mt-3">
+        <div className="text-center mb-2 mt-1">
           <select
             id="brand-input"
             value={selectedMealType}
             onChange={handleMealCategoryTypeChange}
-            className="font-normal text-xl bg-[#f4f4f4]  rounded-md border-none outline-[#ef8829]  py-3 px-3"
+            className="font-normal text-xl bg-[#f4f4f4] border-2 border-[#ef8829]  rounded-md    py-3 px-3"
           >
             <option value="">Filter By Category </option>
             <option value="breakfast">Breakfast</option>
@@ -77,11 +77,20 @@ const AllMeals = () => {
             <option value="dinner">Dinner</option>
           </select>
         </div>
-
-        <div className="text-center mb-5 flex justify-center items-center gap-5 mt-3">
-          <button onClick={() => handleSortByA()}>Low Price</button>
-          <button onClick={() => handleSortByD()}>High Price</button>
-        </div>
+      </div>
+      <div className="text-center mb-5 flex justify-center items-center gap-5 mt-3">
+        <button
+          className="btn bg-[#ef8829] text-white"
+          onClick={() => handleSortByA()}
+        >
+          Low Price
+        </button>
+        <button
+          className="btn bg-gray-400 text-white"
+          onClick={() => handleSortByD()}
+        >
+          High Price
+        </button>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 my-5">

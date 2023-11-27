@@ -20,7 +20,7 @@ const Testimonial = () => {
   return (
     <div>
       <div className="mx-auto text-center md:w-4/12 my-8">
-        <h3 className="text-3xl uppercase font-bold py-4">Testimonials</h3>
+        <h3 className="text-5xl uppercase font-bold py-4">Testimonials</h3>
       </div>
       <Swiper
         navigation={true}

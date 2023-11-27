@@ -6,12 +6,14 @@ import Testimonial from "../Testimonial/Testimonial";
 import MemberShipCard from "../MemberShipCard/MemberShipCard";
 import FoodCard from "../FoodCard/FoodCard";
 import OurMenu from "../OurMenu/OurMenu";
+import OurServices from "../OurServices/OurServices";
 
 const Home = () => {
   return (
     <div>
       <Slider></Slider>
       <MealsCategory></MealsCategory>
+      <OurServices></OurServices>
       <MemberShipCard></MemberShipCard>
       <OurMenu></OurMenu>
 

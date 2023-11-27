@@ -134,7 +134,7 @@ const SingUp2 = () => {
               </div>
             </div> */}
 
-            <div className="flex flex-col justify-center px-8 py-4">
+            <div className="flex flex-col justify-center px-14 py-8">
               <p className="text-red-600 text-center">{error}</p>
               <p className="text-green-600">{success}</p>
               <span className=" text-4xl text-center font-bold">
@@ -146,7 +146,7 @@ const SingUp2 = () => {
 
               <button
                 onClick={handleGoogleSignIn}
-                className="w-full border border-gray-300 text-md p-2 rounded-lg mb-2  hover:bg-[#ef8829] hover:text-white"
+                className="w-full border border-gray-300 text-md p-2 rounded-lg mb-5  hover:bg-[#ef8829] hover:text-white"
               >
                 <img
                   src="/src/assets/google.svg"
@@ -157,7 +157,7 @@ const SingUp2 = () => {
               </button>
 
               <div className="">
-                <span className="mb-2 text-md font-bold">Name</span>
+                <span className="mb-16 text-md font-bold">Name</span>
                 <input
                   type="text"
                   className="w-full   p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
@@ -167,7 +167,7 @@ const SingUp2 = () => {
                   name="name"
                 />
               </div>
-              <div className="py-2">
+              <div className="py-4">
                 <span className="mb-2 text-md font-bold">Email</span>
                 <input
                   className="w-full   p-2 border border-[#ef8829] rounded-lg placeholder:font-light placeholder:text-gray-500"
@@ -190,7 +190,7 @@ const SingUp2 = () => {
                 />
               </div>
 
-              <div className="py-2">
+              <div className="py-4">
                 <span className="mb-2 text-md font-bold">Password</span>
                 <input
                   type={show ? "text" : "password"}

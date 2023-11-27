@@ -66,25 +66,6 @@ const Login2 = () => {
       <form onSubmit={handleSingin}>
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
           <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
-            {/* <!-- left side --> */}
-            {/* <div className="relative">
-              <img
-                src="https://i.ibb.co/fXSFwTP/login2.png"
-                alt="img"
-                className="w-[400px] h-full hidden rounded-lg md:block object-cover"
-              />
-
-              <div className="absolute hidden bottom-10 right-6 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:block">
-                <span className="text-black text-xl">
-                  We have been uesing Untitle to kick
-                  <br />
-                  start every new project and can not <br />
-                  imagine working without it
-                </span>
-              </div>
-            </div> */}
-            {/* right side  */}
-
             <div className="flex flex-col justify-center p-8 md:p-14">
               <p className="text-red-600 text-center">{error}</p>
               <p className="text-green-600">{success}</p>

@@ -8,9 +8,7 @@ const FoodCard = () => {
       <div className="py-5 mt-5">
         <div className="mx-auto max-w-screen-xl">
           <div className="mx-auto text-center md:w-4/12 my-8">
-            <h3 className="text-3xl font-bold uppercase  py-4">
-              Most Popular Menu
-            </h3>
+            <h3 className="text-5xl font-bold uppercase  py-4">Popular Item</h3>
           </div>
           <div className="flex  justify-center items-center">
             <div className=" m-auto food-img">

@@ -11,7 +11,7 @@ const MemberShipCard = () => {
   return (
     <div>
       <div className="mx-auto text-center md:w-4/12 my-8">
-        <h3 className="text-3xl font-bold uppercase  py-4">Our Pricing</h3>
+        <h3 className="text-5xl font-bold uppercase  py-4">Our Pricing</h3>
       </div>
 
       <div className="bg-gray-100 py-10 mb-12  flex items-center justify-center">
