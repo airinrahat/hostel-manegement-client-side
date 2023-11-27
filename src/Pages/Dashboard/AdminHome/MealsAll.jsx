@@ -11,7 +11,6 @@ const MealsAll = () => {
       <div className="overflow-x-auto mt-10">
         <table className="table border-2 ">
           <thead className=" ">
-            <h2>{addMealAlls.length}</h2>
             <tr className="text-lg font-bold text-zinc-600">
               <th>Img</th>
               <th>Name</th>
