@@ -5,7 +5,7 @@ import { FaEdit, FaInfoCircle, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const MealAlls = ({ addMealAll }) => {
-  const { name, email, title, photo, like, _id, review } = addMealAll;
+  const { name, email, title, image, like, _id, review } = addMealAll;
 
   const handleDelete = (_id) => {
     console.log(_id);
@@ -42,24 +42,6 @@ const MealAlls = ({ addMealAll }) => {
         console.log("delete confirm");
       }
     });
-
-    //.then((result) => {
-    //   if (result.isConfirmed) {
-    //     fetch(`https://job-world-server.vercel.app/addjob/${_id}`, {
-    //       method: "DELETE",
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         console.log(data);
-    //         if (data.deletedCount > 0) {
-    //           Swal.fire("Deleted!", "This Job has been deleted.", "success");
-
-    //           const remaining = myjobs.filter((job) => job._id !== _id);
-    //           setMyjobs(remaining);
-    //         }
-    //       });
-    //   }
-    // });
   };
 
   return (
@@ -68,7 +50,7 @@ const MealAlls = ({ addMealAll }) => {
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img src={photo} alt="Avatar Tailwind CSS Component" />
+              <img src={image} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
         </div>
