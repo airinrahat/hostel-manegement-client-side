@@ -34,11 +34,7 @@ const MealAlls = ({ addMealAll }) => {
               });
             }
           });
-        // Swal.fire({
-        //   title: "Deleted!",
-        //   text: "Your file has been deleted.",
-        //   icon: "success",
-        // });
+
         console.log("delete confirm");
       }
     });

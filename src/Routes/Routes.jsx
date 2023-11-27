@@ -17,6 +17,7 @@ import MealsAll from "../Pages/Dashboard/AdminHome/MealsAll";
 import ReviewsAll from "../Pages/Dashboard/AdminHome/ReviewsAll";
 import Serve from "../Pages/Dashboard/AdminHome/Serve";
 import ComigUpMeals from "../Pages/Dashboard/AdminHome/ComigupMeals";
+import Upcoming from "../Pages/Upcoming/Upcoming";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login2></Login2>,
+      },
+      {
+        path: "/upcoming",
+        element: <Upcoming></Upcoming>,
       },
 
       {

@@ -5,16 +5,15 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="mx-auto max-w-screen-xl flex">
-      {/* side bar content */}
-      <div className=" w-64 min-h-full  bg-orange-400">
-        <ul className="menu mt-7 ">
+    <div className="mx-auto max-w-screen-xl  flex justify-between">
+      <div className="  min-h-screen  px-2  mr-6  bg-[#30373E]">
+        <ul className="menu mt-7 mx-10 bg-inherit text-xl text-[#999999]">
           <li>
             <NavLink to="/dashboard/myprofile">
               <FaUser /> My Profile
             </NavLink>
           </li>
-          <li>
+          <li className="my-3">
             <NavLink to="/dashboard/requesMeals">
               <FaUser />
               Request Meals
@@ -27,7 +26,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/manageUsers">
+            <NavLink className="my-3" to="/dashboard/manageUsers">
               <FaUser />
               Manage User
             </NavLink>
@@ -39,7 +38,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/mealsAll">
+            <NavLink className="my-3" to="/dashboard/mealsAll">
               <FaUser />
               All Meals
             </NavLink>
@@ -52,7 +51,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/serve">
+            <NavLink className="my-3" to="/dashboard/serve">
               <FaUser />
               Serve
             </NavLink>
@@ -71,13 +70,13 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/allmeals">
+            <NavLink className="my-3" to="/allmeals">
               <FaUsers></FaUsers> All Meals
             </NavLink>
           </li>
         </ul>
       </div>
-      {/* dashboard content */}
+
       <div className="flex-1">
         <Outlet></Outlet>
       </div>
