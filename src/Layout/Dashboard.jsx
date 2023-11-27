@@ -5,9 +5,9 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="flex justify-center   ">
+    <div className="mx-auto max-w-screen-xl flex">
       {/* side bar content */}
-      <div className=" w-64 min-h-full ml-10 bg-orange-400">
+      <div className=" w-64 min-h-full  bg-orange-400">
         <ul className="menu mt-7 ">
           <li>
             <NavLink to="/dashboard/myprofile">
@@ -78,7 +78,7 @@ const Dashboard = () => {
         </ul>
       </div>
       {/* dashboard content */}
-      <div className="flex-1 ml-12  ">
+      <div className="flex-1">
         <Outlet></Outlet>
       </div>
     </div>

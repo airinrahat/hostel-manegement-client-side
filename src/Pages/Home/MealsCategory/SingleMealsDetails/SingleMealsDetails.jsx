@@ -22,7 +22,7 @@ const SingleMealsDetails = () => {
     <div className="mx-auto max-w-screen-xl flex justify-center my-5">
       <div className="card w-96 bg-base-100 shadow-xl ">
         <figure>
-          <img src={singleMeal?.image} alt="Shoes" />
+          <img className="h-60" src={singleMeal?.image} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">Admin Name:{user.displayName}</h2>
@@ -58,57 +58,14 @@ const SingleMealsDetails = () => {
               {count}
             </div>
           </button>
+          <div>
+            <button className="btn btn-xs">reviews</button>
+          </div>
 
-          <button
-            className="btn bg-[#18ad50] text-white mr-2"
-            onClick={() => document.getElementById("my_modal_1").showModal()}
-          >
+          <button className="btn bg-[#18ad50] text-white mr-2">
             Meal request
           </button>
         </div>
-        <dialog id="my_modal_1" className="modal">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg text-center my-4">Details Page</h3>
-            <form action="/action_page.php">
-              Name:
-              <input
-                type="text"
-                // defaultValue={user.displayName}
-                placeholder="Name"
-                className="input input-bordered w-full my-3 "
-                name="name"
-              />
-              Email:
-              <input
-                type="email"
-                // defaultValue={user.email}
-                placeholder="Email"
-                className="input input-bordered w-full  my-3"
-                name="email"
-              />
-              <br />
-              Resume URL:
-              <input
-                type="url"
-                placeholder="url"
-                className="input input-bordered w-full  my-3"
-                name="url"
-              />
-              <div className="flex justify-end items-center">
-                <input
-                  type="submit"
-                  value="Apply Job"
-                  className="btn btn-success mt-7  mr-4"
-                />
-                <div className="modal-action">
-                  <form method="dialog ">
-                    <button className="btn">Close</button>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </div>
-        </dialog>
       </div>
     </div>
   );

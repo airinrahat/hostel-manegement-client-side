@@ -1,27 +1,34 @@
 [
   {
-    "name": "Basic Package",
+    "name": " Silver Package",
+    "title": "Perfect for growing businesses",
     "price": 29.99,
-    "userLimit": 10,
-    "advancedFeatures": false,
+    "userLimit": "10 user",
+    "advancedFeatures": "Advanced Features",
+    "support": " 24/7 Support",
     "available": true,
     "level": "Basic",
     "contact": "basic-support@example.com"
   },
   {
-    "name": "Standard Package",
+    "name": "Gold Package",
     "price": 49.99,
-    "userLimit": 25,
-    "advancedFeatures": false,
+    "title": "Perfect for growing businesses",
+    "userLimit": "25 user",
+    "advancedFeatures": "Advanced Features",
+    "support": " 24/8 Support",
     "available": true,
     "level": "Standard",
     "contact": "standard-support@example.com"
   },
   {
-    "name": "Premium Package",
+    "name": "Platinum Package",
+    "userLimit": "Unlimited Users",
+    "title": "Perfect for growing businesses",
+    "advancedFeatures": "Premium Features",
+    "support": " 24/8 Support",
     "price": 99.99,
-    "userLimit": 50,
-    "advancedFeatures": true,
+
     "available": true,
     "level": "Premium",
     "contact": "premium-support@example.com"

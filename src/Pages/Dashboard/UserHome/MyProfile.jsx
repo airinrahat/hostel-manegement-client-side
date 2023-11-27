@@ -5,6 +5,7 @@ import { FaGoogleDrive, FaRegIdBadge, FaUserEdit } from "react-icons/fa";
 
 const MyProfile = () => {
   const { user } = useAuth();
+
   return (
     <div className="mx-auto max-w-screen-xl">
       <div className="p-5">
@@ -50,30 +51,33 @@ const MyProfile = () => {
             </div>
           </div>
 
-          <div className=" bg-white p-3 rounded-sm">
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl ">
-                <FaRegIdBadge style={{ fontSize: "50px" }}></FaRegIdBadge>
-              </div>
-              <div>
-                <h3>
-                  <b>Gold Badg</b>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div className=" bg-white p-3 rounded-sm">
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl ">
-                <FaRegIdBadge style={{ fontSize: "50px" }}></FaRegIdBadge>
-              </div>
-              <div>
-                <h3>
-                  <b>Bronze Badge</b>
-                </h3>
+          {user ? (
+            <div className=" bg-white p-3 rounded-sm">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl ">
+                  <FaRegIdBadge style={{ fontSize: "50px" }}></FaRegIdBadge>
+                </div>
+                <div>
+                  <h3>
+                    <b>Bronze Badge</b>
+                  </h3>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className=" bg-white p-3 rounded-sm">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl ">
+                  <FaRegIdBadge style={{ fontSize: "50px" }}></FaRegIdBadge>
+                </div>
+                <div>
+                  <h3>
+                    <b>Gold Badg</b>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

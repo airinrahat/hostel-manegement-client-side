@@ -18,24 +18,34 @@ const AllMeals = () => {
       .then((data) => setMeals(data));
   }, [url]);
   console.log(meals);
-  const handleMealTypeChange = (event) => {
+
+  const handleSearch = (allmeals) => {
+    return allmeals.filter(
+      (item) =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.title.toUpperCase().includes(searchQuery.toUpperCase())
+    );
+  };
+
+  const handleMealCategoryTypeChange = (event) => {
     setSelectedMealType(event.target.value);
     const value = event.target.value;
     const filterValue = allmeals.filter((meal) => meal.category === value);
     setMeals(filterValue);
   };
 
-  // Filter meals based on the selected meals  type
-  const filteredMeals = selectedMealType
-    ? meals.filter((meal) => meal.category === selectedMealType)
-    : meals;
+  const handleSortByA = (Ascending) => {
+    let sortedData = [...meals];
+    sortedData.sort((a, b) => (a.price > b.price ? 1 : -1));
+    setMeals(sortedData);
+    console.log(sortedData);
+  };
 
-  const handleSearch = (allmeals) => {
-    return allmeals.filter(
-      (item) =>
-        item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.category.toUpperCase().includes(searchQuery.toUpperCase())
-    );
+  const handleSortByD = (Descending) => {
+    let sortedData = [...meals];
+    sortedData.sort((a, b) => (b.price > a.price ? 1 : -1));
+    setMeals(sortedData);
+    console.log(sortedData);
   };
 
   return (
@@ -53,18 +63,25 @@ const AllMeals = () => {
         />
       </div>
 
-      <div className="text-center mb-5 mt-3">
-        <select
-          id="brand-input"
-          value={selectedMealType}
-          onChange={handleMealTypeChange}
-          className="font-normal text-xl bg-[#f4f4f4]  rounded-md border-none outline-[#ef8829]  py-3 px-3"
-        >
-          <option value="">Filter By Category </option>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-        </select>
+      <div className="flex justify-center items-center gap-5">
+        <div className="text-center mb-5 mt-3">
+          <select
+            id="brand-input"
+            value={selectedMealType}
+            onChange={handleMealCategoryTypeChange}
+            className="font-normal text-xl bg-[#f4f4f4]  rounded-md border-none outline-[#ef8829]  py-3 px-3"
+          >
+            <option value="">Filter By Category </option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+          </select>
+        </div>
+
+        <div className="text-center mb-5 flex justify-center items-center gap-5 mt-3">
+          <button onClick={() => handleSortByA()}>Low Price</button>
+          <button onClick={() => handleSortByD()}>High Price</button>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 my-5">

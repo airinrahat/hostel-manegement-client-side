@@ -11,17 +11,24 @@ const MealsCategory = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [menu] = useMenu();
 
-  const Breakfast = menu.filter((item) => item.category === "breakfast");
+  const breakfast = menu.filter((item) => item.category === "breakfast");
   const lunch = menu.filter((item) => item.category === "lunch");
   const dinner = menu.filter((item) => item.category === "dinner");
+
+  const breakfastSubset = breakfast.slice(0, 1);
+  const lunchSubset = lunch.slice(0, 1);
+  const dinnerSubset = dinner.slice(0, 1);
+
+  const allmenu = [...breakfastSubset, ...lunchSubset, ...dinnerSubset];
+  console.log(allmenu);
 
   return (
     <div className="text-center my-4 mx-auto max-w-screen-xl">
       <div className="mx-auto text-center md:w-4/12 my-8">
-        <h3 className="text-3xl font-bold uppercase  py-4">All Category</h3>
+        <h3 className="text-5xl font-bold uppercase  py-4">All Category</h3>
       </div>
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList className="font-bold">
+        <TabList className="font-bold text-2xl mb-2">
           <Tab>All Meals</Tab>
           <Tab> Breakfast</Tab>
           <Tab> Lunch</Tab>
@@ -29,9 +36,7 @@ const MealsCategory = () => {
         </TabList>
 
         <TabPanel>
-          <MealsCategoryTab items={dinner}></MealsCategoryTab>
-          <MealsCategoryTab items={lunch}></MealsCategoryTab>
-          <MealsCategoryTab items={Breakfast}></MealsCategoryTab>
+          <MealsCategoryTab items={allmenu}></MealsCategoryTab>
           <Link to="/allmeals">
             {" "}
             <button className="btn bg-[#ef8829]">See All</button>
@@ -39,13 +44,13 @@ const MealsCategory = () => {
         </TabPanel>
 
         <TabPanel>
-          <MealsCategoryTab items={Breakfast}></MealsCategoryTab>
+          <MealsCategoryTab items={breakfast.slice(0, 3)}></MealsCategoryTab>
         </TabPanel>
         <TabPanel>
-          <MealsCategoryTab items={lunch}></MealsCategoryTab>
+          <MealsCategoryTab items={lunch.slice(0, 3)}></MealsCategoryTab>
         </TabPanel>
         <TabPanel>
-          <MealsCategoryTab items={dinner}></MealsCategoryTab>
+          <MealsCategoryTab items={dinner.slice(0, 3)}></MealsCategoryTab>
         </TabPanel>
       </Tabs>
     </div>
