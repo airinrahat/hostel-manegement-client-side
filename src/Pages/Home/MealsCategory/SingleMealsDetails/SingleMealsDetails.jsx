@@ -2,40 +2,60 @@
 import { Rating } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { AiFillLike } from "react-icons/ai";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Provider/AuthProvider";
 
 const SingleMealsDetails = () => {
-  const [singleMeal, setSingleMeal] = useState({});
-  const { user } = useContext(AuthContext);
-  const { id } = useParams();
-  const url = `http://localhost:5000/meals/${id}`;
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setSingleMeal(data));
-  }, [url]);
+  const singledata = useLoaderData();
+  const {
+    category,
+    _id,
+    image,
+    meal_description,
+    ingredients,
+    title,
+    like,
+    review,
+  } = singledata;
 
-  console.log(singleMeal);
+  const { user } = useContext(AuthContext);
+  // const { id } = useParams();
+  // const url = `http://localhost:5000/meals/${id}`;
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => setSingleMeal(data));
+  // }, [url]);
+
+  //handle request
+
+  const handleRequest = (e) => {
+    const singleCard = {
+      menuId: _id,
+      title,
+      like,
+      review,
+    };
+  };
+
   const [count, setCount] = useState(1000);
   return (
     <div className="mx-auto max-w-screen-xl flex justify-center my-5">
       <div className="card w-96 bg-base-100 shadow-xl ">
         <figure>
-          <img className="h-60" src={singleMeal?.image} alt="Shoes" />
+          <img className="h-60" src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Admin Name:{user.displayName}</h2>
-          <h2 className="card-title">Category: {singleMeal?.category}</h2>
+          <h2 className="card-title">Admin Name:{user?.displayName}</h2>
+          <h2 className="card-title">Category: {category}</h2>
           <p>
             {" "}
             <span className="font-bold"> Meal Description</span>:{" "}
-            {singleMeal?.meal_description}
+            {meal_description}
           </p>
           <p>
             {" "}
-            <span className="font-bold"> Ingredients</span> :
-            {singleMeal?.ingredients}
+            <span className="font-bold"> Ingredients</span> :{ingredients}
           </p>
           <p>
             {" "}
@@ -62,7 +82,10 @@ const SingleMealsDetails = () => {
             <button className="btn btn-xs">reviews</button>
           </div>
 
-          <button className="btn bg-[#18ad50] text-white mr-2">
+          <button
+            onClick={handleRequest}
+            className="btn bg-[#18ad50] text-white mr-2"
+          >
             Meal request
           </button>
         </div>
