@@ -25,6 +25,15 @@ const Dashboard = () => {
               My Reviews
             </NavLink>
           </li>
+
+          {/* admin dashboard */}
+
+          <li>
+            <NavLink className="my-3" to="/dashboard/adminProfile">
+              <FaUser />
+              Admin Profile
+            </NavLink>
+          </li>
           <li>
             <NavLink className="my-3" to="/dashboard/manageUsers">
               <FaUser />

@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { AiFillLike } from "react-icons/ai";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Provider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const SingleMealsDetails = () => {
   const singledata = useLoaderData();
@@ -19,15 +21,6 @@ const SingleMealsDetails = () => {
   } = singledata;
 
   const { user } = useContext(AuthContext);
-  // const { id } = useParams();
-  // const url = `http://localhost:5000/meals/${id}`;
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => setSingleMeal(data));
-  // }, [url]);
-
-  //handle request
 
   const handleRequest = (e) => {
     const singleCard = {
@@ -36,6 +29,18 @@ const SingleMealsDetails = () => {
       like,
       review,
     };
+    axios.post("http://localhost:5000/request", singleCard).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: ` added to your request meal`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
   };
 
   const [count, setCount] = useState(1000);

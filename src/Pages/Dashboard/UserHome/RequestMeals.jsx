@@ -1,8 +1,45 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 // import "./RequestMeals.css";
 
 const RequestMeals = () => {
+  const requestMeal = useLoaderData();
+  const { _id } = requestMeal;
+  const handleDelete = (_id) => {
+    console.log(_id);
+
+    // Swal.fire({
+    //   title: "Are you sure?",
+    //   text: "You won't be able to revert this!",
+    //   icon: "warning",
+    //   showCancelButton: true,
+    //   confirmButtonColor: "#3085d6",
+    //   cancelButtonColor: "#d33",
+    //   confirmButtonText: "Yes, delete it!",
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+    //     fetch(`http://localhost:5000/meal/${_id}`, {
+    //       method: "DELETE",
+    //     })
+    //       .then((res) => res.json())
+    //       .then((data) => {
+    //         console.log(data);
+    //         if (data.deletedCount > 0) {
+    //           Swal.fire({
+    //             title: "Deleted!",
+    //             text: "Your meal has been deleted.",
+    //             icon: "success",
+    //           });
+    //         }
+    //       });
+
+    //     console.log("delete confirm");
+    //   }
+    // });
+  };
+
   return (
     <div>
       <h2 className="text-3xl text-center font-bold">Request Meals</h2>
@@ -20,16 +57,27 @@ const RequestMeals = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>12</td>
-              <td>12</td>
-              <td>pending</td>
-              <td>
-                <button className="btn bg-[#ef8829]">cancel</button>
-              </td>
-            </tr>
+            {requestMeal.map((reqMeal) => (
+              <tr key={reqMeal._id}>
+                <th>1</th>
+                <td>{reqMeal.title}</td>
+                <td>{reqMeal.like}</td>
+                <td>{reqMeal.review}</td>
+                <td>
+                  <button className="btn btn-ghost bg-[#ef8829] btn-xs">
+                    pending
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleDelete(_id)}
+                    className="btn bg-[#f1633f]"
+                  >
+                    cancel
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

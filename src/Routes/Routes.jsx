@@ -18,6 +18,7 @@ import ReviewsAll from "../Pages/Dashboard/AdminHome/ReviewsAll";
 import Serve from "../Pages/Dashboard/AdminHome/Serve";
 import ComigUpMeals from "../Pages/Dashboard/AdminHome/ComigupMeals";
 import Upcoming from "../Pages/Upcoming/Upcoming";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
   {
@@ -73,7 +74,17 @@ export const router = createBrowserRouter([
       {
         path: "requesMeals",
         element: <RequestMeals></RequestMeals>,
+        //   loader: ({ params }) =>
+        //     fetch(`http://localhost:5000/request/${params.id}`),
+        // },
+        loader: () => fetch("http://localhost:5000/request"),
       },
+
+      {
+        path: "adminProfile",
+        element: <AdminHome></AdminHome>,
+      },
+
       {
         path: "myReviews",
         element: <MyReviews></MyReviews>,
