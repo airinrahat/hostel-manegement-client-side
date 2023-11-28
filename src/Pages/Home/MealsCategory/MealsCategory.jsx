@@ -20,7 +20,7 @@ const MealsCategory = () => {
   const dinnerSubset = dinner.slice(0, 1);
 
   const allmenu = [...breakfastSubset, ...lunchSubset, ...dinnerSubset];
-  console.log(allmenu);
+  // console.log(allmenu);
 
   return (
     <div className="text-center my-4 mx-auto max-w-screen-xl">

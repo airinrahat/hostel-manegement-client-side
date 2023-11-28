@@ -7,8 +7,10 @@ import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import img from "../../assets/google.svg";
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SingUp2 = () => {
+  const axiosPublice = useAxiosPublic();
   const {
     register,
     handleSubmit,
@@ -27,7 +29,7 @@ const SingUp2 = () => {
 
   const handleSingup = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget);
+
     const form = new FormData(e.currentTarget);
 
     const name = form.get("name");
@@ -58,6 +60,26 @@ const SingUp2 = () => {
         updateUserName(result.user, name);
         updateUserPhoto(result.user, photo);
         navigate(from, { replace: true });
+
+        //create user entry in the  database
+
+        // const userInfo = {
+        //   name: result.name,
+        //   email: result.email,
+        // };
+        // axiosPublice.post("/users", userInfo).then((res) => {
+        //   if (res.data.insertedId) {
+        //     console.log(" user added to database");
+        //     Swal.fire({
+        //       position: "top-end",
+        //       icon: "success",
+        //       title: "User created successfully.",
+        //       showConfirmButton: false,
+        //       timer: 1500,
+        //     });
+        //   }
+        // });
+
         Swal.fire({
           title: "success",
           text: "user SingUp successfully",
@@ -98,6 +120,7 @@ const SingUp2 = () => {
     signInWithGoogle()
       .then((result) => {
         const loggedUser = result.user;
+
         console.log(loggedUser);
         setSuccess("User has been Singup successfully");
         // setSuccess(alert('success'));

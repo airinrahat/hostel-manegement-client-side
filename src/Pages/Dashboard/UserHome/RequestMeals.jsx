@@ -1,43 +1,47 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 // import "./RequestMeals.css";
 
 const RequestMeals = () => {
   const requestMeal = useLoaderData();
-  const { _id } = requestMeal;
+
+  const [meals, setMeals] = useState(requestMeal);
+  console.log(meals);
+
   const handleDelete = (_id) => {
-    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/request/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your meal has been deleted.",
+                icon: "success",
+              });
 
-    // Swal.fire({
-    //   title: "Are you sure?",
-    //   text: "You won't be able to revert this!",
-    //   icon: "warning",
-    //   showCancelButton: true,
-    //   confirmButtonColor: "#3085d6",
-    //   cancelButtonColor: "#d33",
-    //   confirmButtonText: "Yes, delete it!",
-    // }).then((result) => {
-    //   if (result.isConfirmed) {
-    //     fetch(`http://localhost:5000/meal/${_id}`, {
-    //       method: "DELETE",
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         console.log(data);
-    //         if (data.deletedCount > 0) {
-    //           Swal.fire({
-    //             title: "Deleted!",
-    //             text: "Your meal has been deleted.",
-    //             icon: "success",
-    //           });
-    //         }
-    //       });
+              const remaining = meals.filter((meal) => meal._id !== _id);
+              setMeals(remaining);
+            }
+          });
 
-    //     console.log("delete confirm");
-    //   }
-    // });
+        console.log("delete confirm");
+      }
+    });
   };
 
   return (
@@ -57,9 +61,9 @@ const RequestMeals = () => {
             </tr>
           </thead>
           <tbody>
-            {requestMeal.map((reqMeal) => (
+            {meals.map((reqMeal, index) => (
               <tr key={reqMeal._id}>
-                <th>1</th>
+                <th>{index + 1}</th>
                 <td>{reqMeal.title}</td>
                 <td>{reqMeal.like}</td>
                 <td>{reqMeal.review}</td>
@@ -70,7 +74,7 @@ const RequestMeals = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleDelete(_id)}
+                    onClick={() => handleDelete(reqMeal._id)}
                     className="btn bg-[#f1633f]"
                   >
                     cancel

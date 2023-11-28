@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { FaEdit, FaInfoCircle, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MealAlls = ({ addMealAll }) => {
@@ -61,9 +62,11 @@ const MealAlls = ({ addMealAll }) => {
       <td>{review}</td>
 
       <td>
-        <button className="btn bg-[#18ad50] text-white">
-          <FaEdit />
-        </button>
+        <Link to={`/dashboard/updateMeal/${_id}`}>
+          <button className="btn bg-[#18ad50] text-white">
+            <FaEdit />
+          </button>
+        </Link>
       </td>
       <td>
         <button
@@ -74,9 +77,15 @@ const MealAlls = ({ addMealAll }) => {
         </button>
       </td>
       <td>
-        <button className="btn bg-[#ef8829] text-white">
+        <Link to={`/singlemeals/${_id}`}>
+          {" "}
+          <button className="btn bg-[#ef8829] text-white">
+            <FaInfoCircle />
+          </button>{" "}
+        </Link>
+        {/* <button className="btn bg-[#ef8829] text-white">
           <FaInfoCircle />
-        </button>
+        </button> */}
       </td>
     </tr>
   );

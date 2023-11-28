@@ -37,6 +37,8 @@ const AddMeals = () => {
     };
     console.log(newAddMeal);
 
+    const handleMeals = () => {};
+
     fetch("http://localhost:5000/meals", {
       method: "POST",
       headers: {
