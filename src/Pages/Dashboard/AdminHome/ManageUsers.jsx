@@ -20,14 +20,38 @@ const ManageUsers = () => {
               {/* head */}
               <thead className="text-xl font-bold text-black">
                 <tr>
-                  <th>#</th>
+                  <th>Sl</th>
                   <th>User</th>
                   <th>User Name</th>
                   <th>User Email</th>
                   <th>Make Admin</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr className="text-xl">
+                  <td>1</td>
+                  <td>
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img
+                            src={user?.photoURL}
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>{user?.displayName}</td>
+                  <td>{user?.email}</td>
+                  <td>
+                    <button className="btn btn-outline btn-success">
+                      Make Admin
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>

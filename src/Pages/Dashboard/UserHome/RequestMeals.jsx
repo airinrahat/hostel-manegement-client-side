@@ -52,7 +52,7 @@ const RequestMeals = () => {
           {/* head */}
           <thead className="text-2xl font-bold text-black">
             <tr>
-              <th>#</th>
+              <th>SL</th>
               <th>Meal Title</th>
               <th>Likes </th>
               <th> Reviews </th>

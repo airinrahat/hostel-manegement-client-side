@@ -12,11 +12,10 @@ const Home = () => {
   return (
     <div>
       <Slider></Slider>
-      <MealsCategory></MealsCategory>
       <OurServices></OurServices>
+      <MealsCategory></MealsCategory>
       <MemberShipCard></MemberShipCard>
       <OurMenu></OurMenu>
-
       <FoodCard></FoodCard>
       <Testimonial></Testimonial>
     </div>

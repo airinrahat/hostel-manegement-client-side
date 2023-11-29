@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import ServeData from "./ServeData";
 
 const Serve = () => {
+  const reqmeals = useLoaderData();
+
   return (
     <div>
       <div>
@@ -10,7 +14,7 @@ const Serve = () => {
             {/* head */}
             <thead className="text-2xl font-bold text-black">
               <tr>
-                <th>#</th>
+                <th>SL</th>
                 <th>Title</th>
                 <th>Name </th>
                 <th> Email </th>
@@ -19,7 +23,10 @@ const Serve = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {reqmeals.map((reqmeal) => (
+                <ServeData key={reqmeal._id} reqmeal={reqmeal}></ServeData>
+              ))}
+              {/* <tr>
                 <th>1</th>
                 <td>Cy Ganderton</td>
                 <td>promi</td>
@@ -27,9 +34,11 @@ const Serve = () => {
                 <td>pending</td>
 
                 <td>
-                  <button className="btn btn-sm bg-[#ef8829]">serve</button>
+                  <button className="btn btn-sm text-white bg-[#ef8829]">
+                    serve
+                  </button>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import { Rating } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
@@ -8,6 +9,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const SingleMealsDetails = () => {
+  const { user } = useContext(AuthContext);
   const singledata = useLoaderData();
   const {
     category,
@@ -20,14 +22,65 @@ const SingleMealsDetails = () => {
     review,
   } = singledata;
 
-  const { user } = useContext(AuthContext);
+  // const userName = user?.displayName;
+  // const userEmail = user?.email;
 
-  const handleRequest = (e) => {
+  const handleReview = (e) => {
+    // e.preventDefault();
+
+    // const form = e.target;
+    // const name = form.get("name");
+
+    // const email = form.get("email");
+    // const name = form.name.value;
+    // const email = form.email.value;
+
     const singleCard = {
       menuId: _id,
       title,
+      image,
       like,
       review,
+      ingredients,
+      meal_description,
+      category,
+    };
+    axios.post("http://localhost:5000/request", singleCard).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: ` added to your request meal`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+  };
+  const handleRequest = (e) => {
+    // e.preventDefault();
+
+    // const form = e.target;
+    // const name = form.get("name");
+
+    // const email = form.get("email");
+    // const name = form.name.value;
+    // const email = form.email.value;
+
+    const singleCard = {
+      menuId: _id,
+      title,
+      image,
+      // name,
+      // email,
+      // userName,
+      // userEmail,
+      like,
+      review,
+      ingredients,
+      meal_description,
+      category,
     };
     axios.post("http://localhost:5000/request", singleCard).then((res) => {
       console.log(res.data);
@@ -71,7 +124,7 @@ const SingleMealsDetails = () => {
             <b>Ingredients :</b>
           </p>
           {ingredients.map((int) => (
-            <li key={_id}>{int}</li>
+            <li>{int}</li>
           ))}
           <p>
             {" "}
@@ -79,30 +132,30 @@ const SingleMealsDetails = () => {
           </p>
 
           <p>
-            <b className="mt-1">Rating : </b>
-            <Rating style={{ maxWidth: 100 }} value={5} readOnly />
+            <Rating
+              // style={{ maxWidth: 100 }}
+              value={5}
+              readOnly
+            />
           </p>
 
-          {/* <button
-            onClick={() => setCount((count) => count + 1)}
-            
-          >
-            <AiFillLike className="text-info text-start"></AiFillLike>{" "}
-            <div className="flex justify-start">
-              <b>Liked:- </b>
-              {count}
+          <button onClick={() => setCount((count) => count + 1)}>
+            <div className="flex gap-2 mt-1">
+              <div className="mt-1">
+                <AiFillLike className="text-info text-start"></AiFillLike>{" "}
+              </div>
+              <div className="flex justify-start mb-1">
+                <b>Liked:- </b>
+                {count}
+              </div>
             </div>
-          </button> */}
-          <p></p>
-          <button
-            onClick={() => setCount((count) => count + 1)}
-            style={{ border: "none", padding: "5px 10px" }}
-          >
-            <AiFillLike className="text-info"></AiFillLike> <b>Liked:- </b>
-            {count}
           </button>
+
           <div>
-            <button className="btn btn-xs">reviews</button>
+            <Link to={`/reviews/${_id}`}>
+              {/* <Link to=`/reviews`> */}
+              <button className="btn btn-md capitalize px-4 ">reviews</button>
+            </Link>
           </div>
 
           <button

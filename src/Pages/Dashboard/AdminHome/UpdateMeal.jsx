@@ -22,13 +22,13 @@ const UpdateMeal = () => {
       email,
       title,
       photo,
-      like,
-      review,
+      like: parseFloat(like),
+      review: parseFloat(review),
     };
     console.log(updateMeal);
 
     fetch(`http://localhost:5000/meal/${_id}`, {
-      method: "Put",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },

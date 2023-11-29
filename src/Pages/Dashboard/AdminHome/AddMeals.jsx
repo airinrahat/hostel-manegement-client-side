@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const AddMeals = () => {
   const { user } = useAuth();
+  const [mealType, setMealType] = useState("");
 
   const handleAddMeals = (event) => {
     event.preventDefault();
@@ -17,7 +18,7 @@ const AddMeals = () => {
     const photo = form.photo.value;
     const time = form.time.value;
     const Ingredients = form.Ingredients.value;
-
+    const description = form.description.value;
     const rating = form.rating.value;
     const like = form.like.value;
     const price = form.price.value;
@@ -34,30 +35,51 @@ const AddMeals = () => {
       like,
       price,
       review,
+      description,
     };
     console.log(newAddMeal);
 
-    const handleMeals = () => {};
-
-    fetch("http://localhost:5000/meals", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newAddMeal),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "success",
-            text: "meal added successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        }
-      });
+    if (mealType === "addMeal") {
+      fetch("http://localhost:5000/meals", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newAddMeal),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              title: "success",
+              text: "meal added successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }
+        });
+    } else if (mealType === "upcomingMeal") {
+      fetch("http://localhost:5000/upcomingmeals", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newAddMeal),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              title: "success",
+              text: "upcoming meal added successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }
+        });
+    }
   };
 
   return (
@@ -255,8 +277,7 @@ const AddMeals = () => {
               <label className="input-group input border  w-full outline outline-[#ef8829] ">
                 <input
                   type="text"
-                  name="description
-"
+                  name="description"
                   placeholder=" description"
                 />
               </label>
@@ -270,6 +291,7 @@ const AddMeals = () => {
                 <input
                   type="submit"
                   value="Add meal"
+                  onClick={() => setMealType("addMeal")}
                   className="btn btn-block text-white bg-[#ef8829]"
                 />
               </label>
@@ -279,6 +301,7 @@ const AddMeals = () => {
                 <input
                   type="submit"
                   value="upcoming"
+                  onClick={() => setMealType("upcomingMeal")}
                   className="btn btn-block  text-white bg-[#575757]"
                 />
               </label>

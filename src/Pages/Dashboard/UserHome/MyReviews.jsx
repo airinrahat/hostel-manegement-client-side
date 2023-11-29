@@ -1,17 +1,28 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const MyReviews = () => {
+  const { user } = useContext(AuthContext);
+  // const [reqmeals, setReqmeals] = useState([]);
+
+  // const url = `http://localhost:5000/request/email=${user.userEmail}`;
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => setReqmeals(data));
+  // }, [url]);
+
+  // console.log(reqmeals, user);
+
   return (
     <div>
-      <h3>thsi is reviews pages</h3>
-
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead className="text-2xl font-bold text-black">
             <tr>
-              <th>#</th>
+              <th>Sl</th>
               <th>Title</th>
               <th>Likes </th>
               <th> Reviews </th>

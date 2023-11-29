@@ -175,12 +175,12 @@ const Navbar = () => {
                     <img
                       alt="profile"
                       className="mx-auto block "
-                      src={user.photoURL}
+                      src={user.image}
                     />
                   </div>
                 </label>
 
-                <p className="font-bold mb-2 ml-2">{user.displayName}</p>
+                <p className="font-bold mb-2 ml-1">{user.displayName}</p>
 
                 <li className="font-bold mb-2">
                   <NavLink to="/dashboard/myprofile">Dashboard</NavLink>

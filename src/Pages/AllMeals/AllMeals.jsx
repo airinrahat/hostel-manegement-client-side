@@ -62,37 +62,37 @@ const AllMeals = () => {
           style={{ width: "50%", padding: "12px" }}
         />
       </div>
-
-      <div className="flex justify-center items-center gap-5">
-        <div className="text-center mb-2 mt-1">
-          <select
-            id="brand-input"
-            value={selectedMealType}
-            onChange={handleMealCategoryTypeChange}
-            className="font-normal text-xl bg-[#f4f4f4] border-2 border-[#ef8829]  rounded-md    py-3 px-3"
+      <div className="flex  justify-center gap-5">
+        <div className="flex justify-center items-center gap-5">
+          <div className="text-center mb-2 mt-1">
+            <select
+              id="brand-input"
+              value={selectedMealType}
+              onChange={handleMealCategoryTypeChange}
+              className="font-normal text-xl bg-[#f4f4f4] border-2 border-[#ef8829]  rounded-md    py-3 px-3"
+            >
+              <option value="">Filter By Category </option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+            </select>
+          </div>
+        </div>
+        <div className="text-center mb-5 flex justify-center items-center gap-5 mt-3">
+          <button
+            className="btn bg-[#ef8829] text-white"
+            onClick={() => handleSortByA()}
           >
-            <option value="">Filter By Category </option>
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-          </select>
+            Low Price
+          </button>
+          <button
+            className="btn bg-gray-400 text-white"
+            onClick={() => handleSortByD()}
+          >
+            High Price
+          </button>
         </div>
       </div>
-      <div className="text-center mb-5 flex justify-center items-center gap-5 mt-3">
-        <button
-          className="btn bg-[#ef8829] text-white"
-          onClick={() => handleSortByA()}
-        >
-          Low Price
-        </button>
-        <button
-          className="btn bg-gray-400 text-white"
-          onClick={() => handleSortByD()}
-        >
-          High Price
-        </button>
-      </div>
-
       <div className="grid md:grid-cols-3 gap-6 my-5">
         {handleSearch(meals).map((allmeal) => (
           <AllMeal key={allmeal._id} allmeal={allmeal}></AllMeal>

@@ -17,9 +17,10 @@ import MealsAll from "../Pages/Dashboard/AdminHome/MealsAll";
 import ReviewsAll from "../Pages/Dashboard/AdminHome/ReviewsAll";
 import Serve from "../Pages/Dashboard/AdminHome/Serve";
 import ComigUpMeals from "../Pages/Dashboard/AdminHome/ComigupMeals";
-import Upcoming from "../Pages/Upcoming/Upcoming";
+// import Upcoming from "../Pages/Upcoming/Upcoming";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import UpdateMeal from "../Pages/Dashboard/AdminHome/UpdateMeal";
+import Review from "../Pages/Home/MealsCategory/Review";
 
 export const router = createBrowserRouter([
   {
@@ -36,8 +37,11 @@ export const router = createBrowserRouter([
         element: <Login2></Login2>,
       },
       {
-        path: "/upcoming",
-        element: <Upcoming></Upcoming>,
+        path: "/reviews/:id",
+        element: <Review></Review>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/reviews/${params.id}`),
+        // element: <Upcoming></Upcoming>,
       },
 
       {
@@ -50,6 +54,12 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/meals/${params.id}`),
       },
+      // {
+      //   pat: "/reviewsreq",
+      //   element: <Review></Review>,
+      //   loader: ({ params }) =>
+      //     fetch(`http://localhost:5000/meals/${params.id}`),
+      // },
       {
         path: "/checkout/:id",
         element: <CheckoutForm></CheckoutForm>,
@@ -117,6 +127,7 @@ export const router = createBrowserRouter([
       {
         path: "serve",
         element: <Serve></Serve>,
+        loader: () => fetch("http://localhost:5000/request"),
       },
       {
         path: "comingUpMeals",
