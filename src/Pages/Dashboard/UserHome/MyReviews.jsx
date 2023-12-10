@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
@@ -36,10 +37,8 @@ const MyReviews = () => {
               <th>1</th>
               <td>Cy Ganderton</td>
               <td>12</td>
-              <td>12</td>
-
+              <td>12</td>{" "}
               <td>
-                {" "}
                 <button className="btn btn-sm bg-[#ef8829]">Edit</button>
               </td>
               <td>

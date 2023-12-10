@@ -4,25 +4,35 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 const Review = () => {
-  const { reviewdata } = useLoaderData();
+  const reviewdata = useLoaderData();
+  const {
+    category,
+    _id,
+    image,
+    meal_description,
+    ingredients,
+    title,
+    like,
+    review,
+  } = reviewdata;
   return (
     <div className="max-w-screen-lg mx-auto">
-      <h3>this is review req</h3>
+      <h3>this is review req{reviewdata?.category}</h3>
 
       <div className="p-3 text-center">
         <h2 className="text-3xl py-5">
           <u>
-            <b>Feedback Please</b>
+            <b>Reviews Please</b>
           </u>
         </h2>
 
         <div>
-          <form action="" className="bg-slate-50 p-10 mt-0">
+          <form action="" className="bg-slate-200 p-10 mt-0">
             <div className="flex justify-center items-center">
               <Rating style={{ maxWidth: 400 }} isRequired />
             </div>
             <div className="">
-              <label className="label p-0">
+              {/* <label className="label p-0">
                 <h3 className="text-lg">Rating Please :</h3>
               </label>
               <label className="">
@@ -35,7 +45,7 @@ const Review = () => {
                   // value={inputValue}
                   name="rating"
                 />
-              </label>
+              </label> */}
               <label className="label p-0">
                 <h3 className="text-lg">
                   Do you have any suggestion for me ?{" "}
@@ -51,12 +61,12 @@ const Review = () => {
                 />
               </label>
               <label className="label p-0">
-                <h3 className="text-lg">Feedback Detail: </h3>
+                <h3 className="text-lg">Review Detail: </h3>
               </label>
               <label className="">
                 <textarea
-                  name="feedback"
-                  placeholder="Please Feedback"
+                  name="review"
+                  placeholder="Please Review"
                   className="textarea textarea-bordered"
                   style={{ width: "100%" }}
                 ></textarea>
@@ -64,7 +74,7 @@ const Review = () => {
             </div>
 
             <div className="mt-5">
-              <input type="submit" value="Feedback" className="btn" />
+              <input type="submit" value="Review" className="btn" />
             </div>
           </form>
         </div>

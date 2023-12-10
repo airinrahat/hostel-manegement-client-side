@@ -23,8 +23,12 @@ const Serve = () => {
               </tr>
             </thead>
             <tbody>
-              {reqmeals.map((reqmeal) => (
-                <ServeData key={reqmeal._id} reqmeal={reqmeal}></ServeData>
+              {reqmeals.map((reqmeal, index) => (
+                <ServeData
+                  key={reqmeal._id}
+                  reqmeal={reqmeal}
+                  index={index}
+                ></ServeData>
               ))}
               {/* <tr>
                 <th>1</th>

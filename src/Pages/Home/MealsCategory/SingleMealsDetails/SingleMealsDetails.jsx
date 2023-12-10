@@ -21,7 +21,7 @@ const SingleMealsDetails = () => {
     like,
     review,
   } = singledata;
-
+  console.log(singledata);
   // const userName = user?.displayName;
   // const userEmail = user?.email;
 
@@ -40,11 +40,13 @@ const SingleMealsDetails = () => {
       title,
       image,
       like,
+
       review,
       ingredients,
       meal_description,
       category,
     };
+
     axios.post("http://localhost:5000/request", singleCard).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
@@ -72,17 +74,20 @@ const SingleMealsDetails = () => {
       menuId: _id,
       title,
       image,
-      // name,
-      // email,
-      // userName,
-      // userEmail,
+
       like,
       review,
       ingredients,
       meal_description,
       category,
     };
-    axios.post("http://localhost:5000/request", singleCard).then((res) => {
+    const singledataMeal = {
+      ...singleCard,
+      email: user?.email,
+      name: user?.displayName,
+    };
+    console.log(singledataMeal);
+    axios.post("http://localhost:5000/request", singledataMeal).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({

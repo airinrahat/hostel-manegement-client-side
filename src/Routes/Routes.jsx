@@ -21,6 +21,7 @@ import ComigUpMeals from "../Pages/Dashboard/AdminHome/ComigupMeals";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import UpdateMeal from "../Pages/Dashboard/AdminHome/UpdateMeal";
 import Review from "../Pages/Home/MealsCategory/Review";
+import UpdateReview from "../Pages/Dashboard/AdminHome/UpdateReview";
 
 export const router = createBrowserRouter([
   {
@@ -88,7 +89,7 @@ export const router = createBrowserRouter([
         //   loader: ({ params }) =>
         //     fetch(`http://localhost:5000/request/${params.id}`),
         // },
-        loader: () => fetch("http://localhost:5000/request"),
+        // loader: () => fetch("http://localhost:5000/request"),
       },
 
       {
@@ -114,6 +115,10 @@ export const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/meals"),
       },
       {
+        path: "updateReviews",
+        element: <UpdateReview></UpdateReview>,
+      },
+      {
         path: "updateMeal/:id",
         element: <UpdateMeal></UpdateMeal>,
         loader: ({ params }) =>
@@ -127,7 +132,7 @@ export const router = createBrowserRouter([
       {
         path: "serve",
         element: <Serve></Serve>,
-        loader: () => fetch("http://localhost:5000/request"),
+        loader: () => fetch("http://localhost:5000/requestedallmeals"),
       },
       {
         path: "comingUpMeals",

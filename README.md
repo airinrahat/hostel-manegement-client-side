@@ -54,7 +54,7 @@ Role-based access control to manage different levels of permissions.
    Check mess attendance and related notifications
 
 1. Access the website in your web browser by visiting
-   live link:https://job-world-a014d.web.app
+   live link:https://hostel-management-79aab.web.app/
 1.
 
 ## Technologies Used
@@ -64,5 +64,9 @@ This project utilizes the following technologies and libraries:
 - React
 - React Router for navigation
 - Tailwind CSS
+  <br>
+  Admin email : mahi@gmail.com<br>
+  Admin pass : Mm123@<br>
 
-## Client-side live link
+client side github link:https://github.com/airinrahat/hostel-manegement-client-side<br>
+server side github link:https://github.com/airinrahat/hostel-manegement-server-side

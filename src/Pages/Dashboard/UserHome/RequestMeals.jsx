@@ -1,14 +1,25 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../Provider/AuthProvider";
 // import "./RequestMeals.css";
 
 const RequestMeals = () => {
+  const { user } = useContext(AuthContext);
   const requestMeal = useLoaderData();
 
   const [meals, setMeals] = useState(requestMeal);
   console.log(meals);
+
+  const url = `http://localhost:5000/request?email=${user?.email}`;
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setMeals(data));
+  }, [url]);
+
+  console.log(meals, user);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -46,7 +57,7 @@ const RequestMeals = () => {
 
   return (
     <div>
-      <h2 className="text-3xl text-center font-bold">Request Meals</h2>
+      <h2 className="text-3xl text-center font-bold"></h2>
       <div className="overflow-x-auto ">
         <table className="table ">
           {/* head */}

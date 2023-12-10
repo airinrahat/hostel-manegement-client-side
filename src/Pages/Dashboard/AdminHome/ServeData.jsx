@@ -2,23 +2,22 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-const ServeData = ({ reqmeal }) => {
+const ServeData = ({ reqmeal, index }) => {
   const {
     category,
     _id,
-
+    name,
     title,
 
-    userName,
-    userEmail,
+    email,
   } = reqmeal;
 
   return (
     <tr>
-      <th>{+1}</th>
+      <th>{index + 1}</th>
       <td>{title}</td>
-      <td>{userName}</td>
-      <td>{userEmail}</td>
+      <td>{name}</td>
+      <td>{email}</td>
       <td>pending</td>
 
       <td>

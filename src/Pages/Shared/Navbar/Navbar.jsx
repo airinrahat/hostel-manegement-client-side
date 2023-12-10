@@ -166,16 +166,16 @@ const Navbar = () => {
               </div>
             </label>
             <div tabIndex={0} className="dropdown-content z-[100]  w-64 ">
-              <ul className="menu menu-sm dropdown-content  z-[100] mb-5  shadow bg-base-100 border border-[#ef8829] rounded-box w-52">
+              <ul className="menu menu-sm dropdown-content ml-4 z-[100] mb-5  shadow bg-base-100 border border-[#ef8829] rounded-box w-52">
                 <label
                   tabIndex={0}
-                  className="btn btn-ghost btn-circle avatar mb-3 "
+                  className="btn btn-ghost ml-3 btn-circle avatar mb-3 "
                 >
-                  <div className="w-20  rounded-full">
+                  <div className="w-20   rounded-full">
                     <img
                       alt="profile"
                       className="mx-auto block "
-                      src={user.image}
+                      src={user.photoURL}
                     />
                   </div>
                 </label>
