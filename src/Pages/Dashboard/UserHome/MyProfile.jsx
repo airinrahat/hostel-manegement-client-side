@@ -63,7 +63,7 @@ const MyProfile = () => {
         </div>
       </div>
 
-      {/* <div className="lg:flex px-2 lg:flex-col lg:justify-center lg:items-center shadow-xl rounded-2xl">
+      <div className="lg:flex px-2 lg:flex-col lg:justify-center lg:items-center shadow-xl rounded-2xl">
         <div className="h-24 lg:w-2/3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
         <div className="h-72 lg:w-2/3 flex flex-col justify-center items-center">
           <img
@@ -107,7 +107,7 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
     // <div className="mx-auto max-w-screen-xl">
     //   <div className="p-5">
