@@ -161,7 +161,8 @@ const Footer = () => {
         </nav>
         <aside>
           <p>
-            Copyright © 2023 - All right reserved by jobworld Industries Ltd
+            Copyright © 2023 - All right reserved by HostelManagement Industries
+            Ltd
           </p>
         </aside>
       </footer>
