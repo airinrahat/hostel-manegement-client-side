@@ -65,6 +65,9 @@ This project utilizes the following technologies and libraries:
 - React Router for navigation
 - Tailwind CSS
   <br>
+  Admin email :promirahat@gmail.com<br>
+  Admin pass : 123456<br>
+  <br>
   Admin email : mahi@gmail.com<br>
   Admin pass : Mm123@<br>
 
