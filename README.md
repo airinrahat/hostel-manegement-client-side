@@ -68,8 +68,7 @@ This project utilizes the following technologies and libraries:
   Admin email :promirahat@gmail.com<br>
   Admin pass : 123456<br>
   <br>
-  Admin email : mahi@gmail.com<br>
-  Admin pass : Mm123@<br>
+
 
 client side github link:https://github.com/airinrahat/hostel-manegement-client-side<br>
 server side github link:https://github.com/airinrahat/hostel-manegement-server-side
